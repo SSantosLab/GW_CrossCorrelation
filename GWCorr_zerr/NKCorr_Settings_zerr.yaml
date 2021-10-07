@@ -1,0 +1,43 @@
+# gw_dir is the directory of all GW events to analyze. This can also be a single file 
+gw_dir : 'des40a/mockTest/25GW_mockEvents/' 
+# cat_dir is the directory where correspodning galaxy catalogs are. This can be a single file
+cat_dir : 'des40a/mockTest/Galaxy_Catalogs/' 
+#directory for all output folders, files, and plots
+outdir : 'des40a/Final_BCC1Weight_NKObjects/'
+
+# column names for galaxy catalog
+ra_col_name : 'RA'
+dec_col_name : 'DEC'
+redshift_col_name : 'Z'
+redshift_err_col_name : 'Z_ERR'
+
+# column names for GW event file
+prob_col_name : 'PROB'
+distmu_col_name : 'DISTMU'
+distsigma_col_name : 'DISTSIGMA'
+distnorm_col_name : 'DISTNORM'
+
+# nest for GW events (True or False)
+nest : False
+
+
+# set H0 values to analyze. h0_step represents size of step between H0 values
+h0_min : 40
+h0_max : 48
+h0_step : 2
+
+# min_completeness for GW event to be cross-correlated
+min_completeness : 0.8
+# do_randoms sets if the random cross-correlations for each event are done. If skip_done = True, analysis will be skipped
+# for events in set output directory that have already been analyzed
+do_randoms : False
+skip_done : False
+
+# TreeCorr settings
+min_sep : 3
+max_sep : 500
+nbins : 50
+
+#Parralelization settings. n_jobs sets the number of parallelized jobs. n_threads sets number of CPU's to use per job
+n_jobs: 5
+n_threads : 5
